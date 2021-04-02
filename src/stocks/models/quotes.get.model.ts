@@ -1,5 +1,5 @@
 export interface QuoteQueryModel {
-  symbols: string[];
+  symbols?: string[];
 
   update_frequency_milliseconds?: number;
 

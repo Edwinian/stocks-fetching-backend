@@ -4,7 +4,10 @@ import { QuoteQueryModel } from './models/quotes.get.model';
 
 @Injectable({ scope: Scope.REQUEST })
 export class StocksService {
-  public async getQuotes(query: QuoteQueryModel) {
+
+  public async getQuotes(query: QuoteQueryModel): Promise<Quote[]> {
+
+    const totalCount = query.symbols.length
 
     const quotes = await query.symbols.map((symbol) => ({
       symbol, 
